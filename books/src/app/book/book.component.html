@@ -2,7 +2,11 @@
   <h2>{{ book.title }}</h2>
   <p>{{ book.description }}</p>
   <p>Author: {{ book.author }}</p>
-  <p>Rating: {{ book.rating }}/5</p>
-  <button (click)="rateBook(1)" [disabled]="book.rating === 5">Rate +1</button>
-  <button (click)="rateBook(-1)" [disabled]="book.rating === 0">Rate -1</button>
+  <p>Rating: {{ calulateAvgRate() }}/5</p>
+  <button
+    *ngFor="let number of [1, 2, 3, 4, 5]"
+    (click)="rateBook(number)"
+  >
+    {{ number }}
+  </button>
 </div>

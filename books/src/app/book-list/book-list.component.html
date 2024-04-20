@@ -1,3 +1,8 @@
-<div *ngFor="let book of books">
-  <app-book [book]="book" (rate)="updateBook($event)"></app-book>
-</div>
+<ng-container *ngIf="books && books.length > 0">
+  <app-book
+    [book]="currentBook"
+    *ngIf="currentBook"
+    (rate)="rateBookAndMoveNext($event)"
+  ></app-book>
+  <button *ngIf="!currentBook" (click)="confirmStartOver()">Start Over</button>
+</ng-container>

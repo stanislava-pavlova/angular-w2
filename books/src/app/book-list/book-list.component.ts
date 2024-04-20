@@ -12,7 +12,9 @@ import { Book } from '../models/book.model';
   imports: [CommonModule, BookComponent],
 })
 export class BookListComponent {
-  books!: Book[];
+  books!: Book[]
+  currentBookIndex = 0;
+  currentBook: Book | undefined;
 
   constructor(private bookService: BookService) {}
 
@@ -21,13 +23,29 @@ export class BookListComponent {
   }
 
   getBooks() {
-    this.bookService.getBooks$().subscribe((books) => (this.books = books));
+    this.bookService.getBooks$().subscribe((books) => {
+      this.books = books;
+      this.currentBook = this.books[this.currentBookIndex];
+    });
   }
 
-  updateBook(updatedBook: Book) {
-    const index = this.books.findIndex((book) => book.id === updatedBook.id);
-    if (index !== -1) {
-      this.books[index] = updatedBook;
+  rateBookAndMoveNext(updatedBook: Book) {
+    this.bookService.updateBook$(updatedBook).subscribe(() => {
+      this.currentBookIndex++;
+      if (this.currentBookIndex < this.books.length) {
+        this.currentBook = this.books[this.currentBookIndex];
+      } else {
+        this.currentBook = undefined;
+        this.currentBookIndex = 0;
+      }
+    });
+  }
+
+  confirmStartOver() {
+    if (confirm('Do you want to start over?')) {
+      // this.currentBookIndex = 0;
+      // this.currentBook = this.books[this.currentBookIndex];
+      this.getBooks()
     }
   }
 }

@@ -1,7 +1,7 @@
 <div class="book">
   <h2>{{ book.title }}</h2>
   <p>{{ book.description }}</p>
-  <p>Authors: {{ book.author }}</p>
+  <p>Author: {{ book.author }}</p>
   <p>Rating: {{ book.rating }}/5</p>
   <button (click)="rateBook(1)" [disabled]="book.rating === 5">Rate +1</button>
   <button (click)="rateBook(-1)" [disabled]="book.rating === 0">Rate -1</button>

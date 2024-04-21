@@ -1,8 +1,16 @@
 <ng-container *ngIf="books && books.length > 0">
-  <app-book
-    [book]="currentBook"
-    *ngIf="currentBook"
-    (rate)="rateBookAndMoveNext($event)"
-  ></app-book>
-  <button *ngIf="!currentBook" (click)="confirmStartOver()">Start Over</button>
+  <div class="container">
+    <app-book
+      [book]="currentBook"
+      *ngIf="currentBook"
+      (rate)="rateBookAndMoveNext($event)"
+    ></app-book>
+    <div *ngIf="!currentBook">
+      <div>You have successfully rated all the books!</div>
+      <div class="btn-container">
+        <button (click)="confirmStartOver()">Start Over</button>
+        <button (click)="confirmFinishOver()">Finish</button>
+      </div>
+    </div>
+  </div>
 </ng-container>

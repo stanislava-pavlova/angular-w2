@@ -12,7 +12,7 @@ import { Book } from '../models/book.model';
   imports: [CommonModule, BookComponent],
 })
 export class BookListComponent {
-  books!: Book[]
+  books!: Book[];
   currentBookIndex = 0;
   currentBook: Book | undefined;
 
@@ -42,10 +42,10 @@ export class BookListComponent {
   }
 
   confirmStartOver() {
-    if (confirm('Do you want to start over?')) {
-      // this.currentBookIndex = 0;
-      // this.currentBook = this.books[this.currentBookIndex];
-      this.getBooks()
-    }
+    this.getBooks();
+  }
+
+  confirmFinishOver() {
+    alert('Thank you for your participation!');
   }
 }

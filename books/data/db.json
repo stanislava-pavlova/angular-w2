@@ -2,17 +2,41 @@
   "books": [
     {
       "id": 1,
-      "title": "Book 1",
-      "description": "Description of Book 1",
-      "author": "Author 1",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "description": "The first book in Harry Potter series, following the young wizard Harry Potter and his friends as they attend Hogwarts School of Witchcraft and Wizardry.",
+      "author": "J.K. Rowling",
       "rating": 0,
       "votes": 0
     },
     {
       "id": 2,
-      "title": "Book 2",
-      "description": "Description of Book 2",
-      "author": "Author 2",
+      "title": "The Little Prince",
+      "description": "Antoine de Saint-Exupéry's classic novella about a young prince who travels to different planets, learning important life lessons along the way.",
+      "author": "Antoine de Saint-Exupéry",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 3,
+      "title": "The Hobbit",
+      "description": "J.R.R. Tolkien's fantasy novel about the hobbit Bilbo Baggins, who embarks on a quest to reclaim the treasure guarded by the dragon Smaug.",
+      "author": "J.R.R. Tolkien",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 4,
+      "title": "The Great Gatsby",
+      "description": "F. Scott Fitzgerald's novel set during the Roaring Twenties, a tale of love, wealth, and the American Dream.",
+      "author": "F. Scott Fitzgerald",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 5,
+      "title": "Harry Potter and the Deathly Hallows",
+      "description": "The seventh and final book in Harry Potter series, following Harry Potter's final confrontation with the dark wizard Voldemort.",
+      "author": "J.K. Rowling",
       "rating": 0,
       "votes": 0
     }
